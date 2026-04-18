@@ -1,26 +1,79 @@
-# Raylib C++ Starter Template
+# Linux Task Manager (C++ | raylib)
 
-Raylib C++ Starter Template for Visual Studio Code on Windows.
+A simple Linux Task Manager built in C++ using raylib, focused on real-time system monitoring with an added remote alert feature.
 
-This demo project contains a bouncing ball raylib example program.
+## Features
 
-It works with raylib version 4.5.
-Tested on both Windows 10 and Windows 11.
+* Real-time CPU, Memory, and Disk usage monitoring
+* View and manage running processes
+* Kill processes directly from the UI
+* CPU temperature tracking
+* Remote alert system (sends message to server when:
 
-# Video Tutorial
+  * CPU temperature exceeds 80°C
+  * A process consumes high CPU)
 
-<p align="center">
-  <img src="preview.jpg" alt="" width="800">
-</p>
+---
 
-<p align="center">
-🎥 <a href="https://www.youtube.com/watch?v=PaAcVk5jUd8">Video Tutorial on YouTube</a>
-</p>
+## How to Run
 
-<br>
-<br>
-<p align="center">
-| 📺 <a href="https://www.youtube.com/channel/UC3ivOTE5EgpmF2DHLBmWIWg">My YouTube Channel</a>
-| 🌍 <a href="https://www.programmingwithnick.com">My Website</a> | <br>
-</p>
+### 1. Start the Server First
 
+Make sure your server is running before launching the task manager.
+
+* You can use:
+
+  * `localhost` (127.0.0.1) for local testing
+  * Or your system’s IP address for remote monitoring
+
+---
+
+### 2. Compile the Project
+
+Make sure you have **raylib installed**, then compile:
+
+```bash
+g++ main.cpp -o taskmanager -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+```
+
+---
+
+### 3. Run the Application
+
+```bash
+./taskmanager
+```
+
+When prompted:
+
+```
+Enter server IP:
+```
+
+* Enter:
+
+  * `127.0.0.1` (for local server)
+  * Or your server’s IP address
+
+---
+
+## Notes
+
+* The server must be running on port **8080**
+* The application will automatically send alerts when thresholds are exceeded
+* Designed for Linux systems
+
+---
+
+
+## Future Improvements
+
+* Better UI enhancements
+* Logging system
+* Cross-platform support
+
+---
+
+## Author
+
+Zubair Ahmed
